@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ED3D — Contabilidade & Impressão 3D</title>
+  <title>Inovação 3D — Impressão e Produtos em 3D</title>
   
   <!-- Fonte Moderna (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +15,8 @@
     :root {
       --bg-dark: #0f172a;
       --bg-card: #1e293b;
-      --primary: #2563eb;
       --accent-3d: #06b6d4;
+      --accent-hover: #22d3ee;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --border-color: rgba(255, 255, 255, 0.1);
@@ -37,13 +37,13 @@
       flex-direction: column;
     }
 
-    /* Navbar Flutuante / Glassmorphism */
+    /* Header Flutuante */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1.2rem 8%;
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       position: sticky;
@@ -58,7 +58,7 @@
       letter-spacing: -0.5px;
     }
 
-    .logo span { color: var(--primary); }
+    .logo span { color: var(--accent-3d); }
 
     .nav-links { display: flex; gap: 0.5rem; }
 
@@ -71,9 +71,11 @@
       cursor: pointer;
       border-radius: 6px;
       transition: all 0.3s ease;
+      text-decoration: none;
+      font-size: 0.95rem;
     }
 
-    .nav-btn:hover, .nav-btn.active {
+    .nav-btn:hover {
       color: var(--text-main);
       background: rgba(255, 255, 255, 0.05);
     }
@@ -86,292 +88,206 @@
       width: 100%;
     }
 
-    /* Alternância de Seções */
-    .secao { display: none; }
-    .secao.ativa { display: block; }
-
-    /* Animação Smooth Fade In */
-    .fade-in {
-      animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Hero / Header das Seções */
+    /* Hero */
     .hero {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 3rem auto;
+      max-width: 750px;
+      margin: 0 auto 4rem auto;
     }
 
     .badge {
       display: inline-block;
-      padding: 0.3rem 0.8rem;
-      background: rgba(37, 99, 235, 0.15);
-      color: #60a5fa;
+      padding: 0.35rem 0.9rem;
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--accent-3d);
       border-radius: 20px;
       font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .badge.tech {
-      background: rgba(6, 182, 212, 0.15);
-      color: #22d3ee;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(6, 182, 212, 0.3);
     }
 
     .hero h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 800;
       line-height: 1.2;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero p { color: var(--text-muted); font-size: 1.05rem; }
-
-    /* Split Cards (Home) */
-    .split-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .card-hero {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 2.5rem;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card-hero:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
-    }
-
-    .card-tag {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--primary);
       margin-bottom: 1rem;
     }
 
-    .card-tag.tech { color: var(--accent-3d); }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; }
 
-    .card-hero h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
-    .card-hero p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
-
-    .card-action {
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
-
-    /* Grids Internos */
+    /* Seções e Cards */
     .content-box {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 16px;
       padding: 3rem 2rem;
       text-align: center;
+      margin-bottom: 3rem;
     }
 
-    .content-box h2 { font-size: 1.8rem; margin: 0.5rem 0; }
-    .content-box .subtitle { color: var(--text-muted); margin-bottom: 2rem; }
+    .content-box h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .content-box .subtitle { color: var(--text-muted); margin-bottom: 2.5rem; }
 
-    .features-grid, .galeria-grid {
+    /* Grid do Catálogo / Produtos */
+    .galeria-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
       margin: 2rem 0;
       text-align: left;
     }
 
-    .feature-card, .galeria-card {
+    .galeria-card {
       background: rgba(15, 23, 42, 0.6);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 1.5rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
-    .feature-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-main); }
-    .feature-card p { font-size: 0.9rem; color: var(--text-muted); }
+    .galeria-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(6, 182, 212, 0.4);
+    }
 
     .img-placeholder {
-      height: 180px;
+      height: 200px;
       background: rgba(255,255,255,0.03);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       border: 1px dashed var(--border-color);
     }
 
-    /* Botões */
-    .btn-primary {
-      display: inline-block;
-      padding: 0.9rem 1.8rem;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 8px;
-      transition: filter 0.2s ease;
-      margin-top: 1rem;
+    .galeria-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text-main); }
+    .galeria-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; }
+
+    /* Grid de Diferenciais */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
     }
 
-    .btn-primary.tech-btn { background: var(--accent-3d); color: #000; }
-    .btn-primary:hover { filter: brightness(1.15); }
+    .feature-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .feature-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent-3d); }
+    .feature-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* Botão Principal */
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--accent-3d);
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      margin-top: 1.5rem;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.4);
+    }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">ED3D<span>.</span></div>
+    <div class="logo">Inovação <span>3D</span></div>
     <nav class="nav-links">
-      <button onclick="mostrarSecao('home')" class="nav-btn active">Início</button>
-      <button onclick="mostrarSecao('contabilidade')" class="nav-btn">Contabilidade</button>
-      <button onclick="mostrarSecao('impressao3d')" class="nav-btn">Impressão 3D</button>
+      <a href="#produtos" class="nav-btn">Produtos</a>
+      <a href="#diferenciais" class="nav-btn">Diferenciais</a>
+      <a href="#orcamento" class="nav-btn">Contato</a>
     </nav>
   </header>
 
   <main>
-    <!-- Home Divisória -->
-    <section id="sec-home" class="secao ativa fade-in">
-      <div class="hero">
-        <span class="badge">Inovação & Gestão</span>
-        <h1>Soluções inteligentes para o seu negócio e projetos</h1>
-        <p>A experiência contábil que sua empresa precisa aliada à tecnologia de fabricação aditiva.</p>
-      </div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="badge">Artigos em 3D & Sob Encomenda</span>
+      <h1>Criatividade e precisão impressas em cada detalhe</h1>
+      <p>Action figures, itens de decoração, chaveiros personalizados e utensílios criativos produzidos com tecnologia de impressão 3D.</p>
+    </section>
 
-      <div class="split-container">
-        <!-- Card Contabilidade -->
-        <div class="card-hero" onclick="mostrarSecao('contabilidade')">
-          <div>
-            <div class="card-tag">Para Empresas</div>
-            <h2>Serviços Contábeis</h2>
-            <p>Gestão fiscal, abertura de empresas, impostos e consultoria completa para PMEs.</p>
-          </div>
-          <div class="card-action">
-            <span>Explorar Serviços</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
+    <!-- Catálogo de Produtos -->
+    <section id="produtos" class="content-box">
+      <h2>Nossos Produtos</h2>
+      <p class="subtitle">Confira as principais categorias que produzimos:</p>
+
+      <div class="galeria-grid">
+        <div class="galeria-card">
+          <div class="img-placeholder"><span>[Foto Action Figure]</span></div>
+          <h3>Action Figures & Colecionáveis</h3>
+          <p>Personagens de games, animes e filmes com alto nível de detalhamento e acabamento.</p>
         </div>
 
-        <!-- Card Impressão 3D -->
-        <div class="card-hero" onclick="mostrarSecao('impressao3d')">
-          <div>
-            <div class="card-tag tech">Manufatura 3D</div>
-            <h2>Impressão 3D & Prototipagem</h2>
-            <p>Transformamos modelos digitais em peças físicas de alta precisão e acabamento.</p>
-          </div>
-          <div class="card-action">
-            <span>Ver Portfólio</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </div>
+        <div class="galeria-card">
+          <div class="img-placeholder"><span>[Foto Decoração]</span></div>
+          <h3>Decoração & Design</h3>
+          <p>Vasos, luminárias, estátuas e objetos decorativos exclusivos para sua casa ou escritório.</p>
+        </div>
+
+        <div class="galeria-card">
+          <div class="img-placeholder"><span>[Foto Chaveiros]</span></div>
+          <h3>Chaveiros & Brindes</h3>
+          <p>Chaveiros personalizados, lembrancinhas e brindes corporativos produzidos sob demanda.</p>
+        </div>
+
+        <div class="galeria-card">
+          <div class="img-placeholder"><span>[Foto Utensílios]</span></div>
+          <h3>Utensílios & Suportes</h3>
+          <p>Suportes para fones, controles, organizadores de mesa e peças funcionais para o dia a dia.</p>
         </div>
       </div>
     </section>
 
-    <!-- Seção Contabilidade -->
-    <section id="sec-contabilidade" class="secao fade-in">
-      <div class="content-box">
-        <span class="badge">Gestão & Finanças</span>
-        <h2>Assessoria Contábil Especializada</h2>
-        <p class="subtitle">Descomplicamos a burocracia para sua empresa crescer com segurança.</p>
+    <!-- Diferenciais -->
+    <section id="diferenciais" class="content-box">
+      <h2>Por que comprar na Inovação 3D?</h2>
+      <p class="subtitle">Qualidade e dedicação do modelo virtual até a entrega final.</p>
 
-        <div class="features-grid">
-          <div class="feature-card">
-            <h3>Abertura e Regularização</h3>
-            <p>Processo ágil para estruturar sua empresa no modelo tributário correto.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Gestão Fiscal & Folha</h3>
-            <p>Emissão de impostos, guias e cumprimento de todas as obrigações sem surpresas.</p>
-          </div>
-          <div class="feature-card">
-            <h3>Consultoria para PMEs</h3>
-            <p>Orientação estratégica para tomadas de decisões financeiras mais inteligentes.</p>
-          </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>Personalização Total</h3>
+          <p>Traga sua ideia ou arquivo 3D e criamos uma peça exclusiva na cor e tamanho que você precisa.</p>
         </div>
-
-        <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20contábeis." target="_blank" class="btn-primary">
-          Falar no WhatsApp
-        </a>
+        <div class="feature-card">
+          <h3>Materiais de Alta Qualidade</h3>
+          <p>Impressões feitas com filamentos resistentes e com excelente acabamento superficial.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Atendimento Direto</h3>
+          <p>Fale diretamente pelo WhatsApp para tirar dúvidas, consultar catálogo e fazer orçamentos.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Seção Impressão 3D -->
-    <section id="sec-impressao3d" class="secao fade-in">
-      <div class="content-box">
-        <span class="badge tech">Engenharia & Design</span>
-        <h2>Manufatura Aditiva & Peças Sob Medida</h2>
-        <p class="subtitle">Do protótipo funcional ao produto final com materiais de alta resistência.</p>
-
-        <div class="galeria-grid">
-          <div class="galeria-card">
-            <div class="img-placeholder"><span>Peça Técnica</span></div>
-            <p><strong>Prototipagem Industrial</strong></p>
-          </div>
-          <div class="galeria-card">
-            <div class="img-placeholder"><span>Maquete / Modelo</span></div>
-            <p><strong>Arquitetura e Design</strong></p>
-          </div>
-          <div class="galeria-card">
-            <div class="img-placeholder"><span>Peça Customizada</span></div>
-            <p><strong>Utilidades e Decoração</strong></p>
-          </div>
-        </div>
-
-        <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20impressão%203D." target="_blank" class="btn-primary tech-btn">
-          Solicitar Orçamento 3D
-        </a>
-      </div>
+    <!-- Chamada para Ação / WhatsApp -->
+    <section id="orcamento" class="content-box">
+      <h2>Gostou de algum produto ou quer algo sob encomenda?</h2>
+      <p class="subtitle">Entre em contato para consultar preços, pronta-entrega ou pedir um orçamento personalizado.</p>
+      
+      <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Inovação%203D." target="_blank" class="btn-primary">
+        Falar no WhatsApp
+      </a>
     </section>
   </main>
 
-  <!-- Lógica Embutida (JavaScript) -->
-  <script>
-    function mostrarSecao(secaoId) {
-      // Esconde todas as seções
-      const secoes = document.querySelectorAll('.secao');
-      secoes.forEach(secao => secao.classList.remove('ativa'));
-
-      // Desmarca botões da navbar
-      const navBtns = document.querySelectorAll('.nav-btn');
-      navBtns.forEach(btn => btn.classList.remove('active'));
-
-      // Exibe a seção alvo
-      const secaoAlvo = document.getElementById(`sec-${secaoId}`);
-      if (secaoAlvo) {
-        secaoAlvo.classList.add('ativa');
-      }
-
-      // Ativa o botão correto no menu
-      const indexMap = { 'home': 0, 'contabilidade': 1, 'impressao3d': 2 };
-      if (navBtns[indexMap[secaoId]]) {
-        navBtns[indexMap[secaoId]].classList.add('active');
-      }
-
-      // Rola para o topo de forma suave
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
